@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["dijkstra","Main class for performing Dijkstra's algorithm."],["error","Error type crate."],["iter","Collection of iterators over a graph."]],"struct":[["Graph","Graph structure."],["HeapData","HeapData struct"],["Poisoned","Poisoned graph."]],"trait":[["GraphTrait","Graph Trait."]]});

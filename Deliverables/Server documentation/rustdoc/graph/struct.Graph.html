@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Graph` struct in crate `graph`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Graph">
+
+    <title>graph::Graph - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>graph</a></p><script>window.sidebarCurrent = {name: 'Graph', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>graph</a>::<wbr><a class='struct' href=''>Graph</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/graph/graph/graph.rs.html#24-26' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Graph&lt;V, E&gt; { /* fields omitted */ }</pre><div class='docblock'><p>Graph structure.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a, V:&nbsp;'a, E:&nbsp;'a&gt; <a class='struct' href='../graph/struct.Graph.html' title='graph::Graph'>Graph</a>&lt;V, E&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/graph/graph/graph.rs.html#28-158' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class='method'><span id='new.v' class='invisible'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;NI, EI&gt;(vertices: NI, edges: EI) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../graph/struct.Graph.html' title='graph::Graph'>Graph</a>&lt;V, E&gt;, <a class='enum' href='../graph/error/enum.Error.html' title='graph::error::Error'>Error</a>&gt; <span class='where fmt-newline'>where NI: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html' title='core::iter::traits::IntoIterator'>IntoIterator</a>&lt;Item=<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>, V<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EI: <a class='trait' href='https://doc.rust-lang.org/nightly/core/iter/traits/trait.IntoIterator.html' title='core::iter::traits::IntoIterator'>IntoIterator</a>&lt;Item=<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>, E, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>&gt;</span></code></span></h4>
+<div class='docblock'><p>Create a new graph, with the given vertices and edges.</p>
+
+<p>Every vertex is of the form <code>(id : usize, v : V)</code>, and every edge is of the
+form <code>(from : usize, e : E, to : usize)</code>, which connect the vertex with index
+<code>from</code> to the vertex with index <code>to</code>.</p>
+
+<p>Returns: A new graph instance, or an error if an edge originates from a nonexisting vertex.</p>
+
+<h1 id='examples' class='section-header'><a href='#examples'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>graph</span>::<span class='ident'>Graph</span>;
+<span class='kw'>let</span> <span class='ident'>graph</span> <span class='op'>=</span> <span class='ident'>Graph</span>::<span class='ident'>new</span>(
+            <span class='macro'>vec</span><span class='macro'>!</span>[(<span class='number'>0</span>, <span class='string'>&quot;A&quot;</span>), (<span class='number'>5</span>, <span class='string'>&quot;B&quot;</span>)],
+            <span class='macro'>vec</span><span class='macro'>!</span>[(<span class='number'>0</span>, <span class='string'>&quot;Edge from A to B&quot;</span>, <span class='number'>5</span>)]
+    ).<span class='ident'>expect</span>(<span class='string'>&quot;This does not happen&quot;</span>);
+</pre>
+</div><h4 id='method.contains' class='method'><span id='contains.v' class='invisible'><code>fn <a href='#method.contains' class='fnname'>contains</a>(&amp;self, index: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></span></h4>
+<div class='docblock'><p>Returns whether the graph contains the index.</p>
+
+<h1 id='examples-1' class='section-header'><a href='#examples-1'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>graph</span>::<span class='ident'>Graph</span>;
+<span class='kw'>let</span> <span class='ident'>graph</span> <span class='op'>=</span> <span class='ident'>Graph</span>::<span class='ident'>new</span>(
+            <span class='macro'>vec</span><span class='macro'>!</span>[(<span class='number'>0</span>, <span class='string'>&quot;A&quot;</span>), (<span class='number'>5</span>, <span class='string'>&quot;B&quot;</span>)],
+            <span class='macro'>vec</span><span class='macro'>!</span>[(<span class='number'>0</span>, <span class='string'>&quot;Edge from A to B&quot;</span>, <span class='number'>5</span>)]
+    ).<span class='ident'>expect</span>(<span class='string'>&quot;This does not happen&quot;</span>);
+
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>graph</span>.<span class='ident'>contains</span>(<span class='number'>0</span>), <span class='bool-val'>true</span>); <span class='comment'>// The vertex with index 0 has data &quot;A&quot;.</span>
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>graph</span>.<span class='ident'>contains</span>(<span class='number'>2</span>), <span class='bool-val'>false</span>);</pre>
+</div><h4 id='method.get_edges' class='method'><span id='get_edges.v' class='invisible'><code>fn <a href='#method.get_edges' class='fnname'>get_edges</a>(&amp;'a self, index: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../graph/iter/struct.IterEdges.html' title='graph::iter::IterEdges'>IterEdges</a>&lt;'a, E&gt;&gt;</code></span></h4>
+<div class='docblock'><p>Returns all edges connected to a node.</p>
+
+<h1 id='examples-2' class='section-header'><a href='#examples-2'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>graph</span>::<span class='ident'>Graph</span>;
+<span class='kw'>let</span> <span class='ident'>graph</span> <span class='op'>=</span> <span class='ident'>Graph</span>::<span class='ident'>new</span>(
+            <span class='macro'>vec</span><span class='macro'>!</span>[(<span class='number'>0</span>, <span class='string'>&quot;A&quot;</span>), (<span class='number'>5</span>, <span class='string'>&quot;B&quot;</span>)],
+            <span class='macro'>vec</span><span class='macro'>!</span>[(<span class='number'>0</span>, <span class='string'>&quot;Edge from A to B&quot;</span>, <span class='number'>5</span>)]
+    ).<span class='ident'>expect</span>(<span class='string'>&quot;This does not happen&quot;</span>);
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>edges</span> <span class='op'>=</span> <span class='ident'>graph</span>.<span class='ident'>get_edges</span>(<span class='number'>0</span>).<span class='ident'>expect</span>(<span class='string'>&quot;This does not happen&quot;</span>);
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>edges</span>.<span class='ident'>next</span>(), <span class='prelude-val'>Some</span>(<span class='kw-2'>&amp;</span><span class='string'>&quot;Edge from A to B&quot;</span>));
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>edges</span>.<span class='ident'>next</span>(), <span class='prelude-val'>None</span>);</pre>
+</div><h4 id='method.get_connids' class='method'><span id='get_connids.v' class='invisible'><code>fn <a href='#method.get_connids' class='fnname'>get_connids</a>(&amp;'a self, index: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../graph/iter/struct.IterConnIds.html' title='graph::iter::IterConnIds'>IterConnIds</a>&lt;'a, E&gt;&gt;</code></span></h4>
+<div class='docblock'><p>Returns all the nodes this node is connected to.</p>
+
+<h1 id='examples-3' class='section-header'><a href='#examples-3'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>graph</span>::<span class='ident'>Graph</span>;
+<span class='kw'>let</span> <span class='ident'>graph</span> <span class='op'>=</span> <span class='ident'>Graph</span>::<span class='ident'>new</span>(
+            <span class='macro'>vec</span><span class='macro'>!</span>[(<span class='number'>0</span>, <span class='string'>&quot;A&quot;</span>), (<span class='number'>5</span>, <span class='string'>&quot;B&quot;</span>)],
+            <span class='macro'>vec</span><span class='macro'>!</span>[(<span class='number'>0</span>, <span class='string'>&quot;Edge from A to B&quot;</span>, <span class='number'>5</span>)]
+    ).<span class='ident'>expect</span>(<span class='string'>&quot;This does not happen&quot;</span>);
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>edges</span> <span class='op'>=</span> <span class='ident'>graph</span>.<span class='ident'>get_connids</span>(<span class='number'>0</span>).<span class='ident'>expect</span>(<span class='string'>&quot;This does not happen&quot;</span>);
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>edges</span>.<span class='ident'>next</span>(), <span class='prelude-val'>Some</span>(<span class='number'>5</span>));
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>edges</span>.<span class='ident'>next</span>(), <span class='prelude-val'>None</span>);</pre>
+</div><h4 id='method.list_ids' class='method'><span id='list_ids.v' class='invisible'><code>fn <a href='#method.list_ids' class='fnname'>list_ids</a>(&amp;'a self) -&gt; <a class='struct' href='../graph/iter/struct.ListIds.html' title='graph::iter::ListIds'>ListIds</a>&lt;'a, V, E&gt;</code></span></h4>
+<div class='docblock'><p>Returns a list of all possible ids.</p>
+
+<h1 id='examples-4' class='section-header'><a href='#examples-4'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>graph</span>::<span class='ident'>Graph</span>;
+<span class='kw'>let</span> <span class='ident'>graph</span> <span class='op'>=</span> <span class='ident'>Graph</span>::<span class='ident'>new</span>(
+            <span class='macro'>vec</span><span class='macro'>!</span>[(<span class='number'>0</span>, <span class='string'>&quot;A&quot;</span>), (<span class='number'>5</span>, <span class='string'>&quot;B&quot;</span>)],
+            <span class='macro'>vec</span><span class='macro'>!</span>[(<span class='number'>0</span>, <span class='string'>&quot;Edge from A to B&quot;</span>, <span class='number'>5</span>)]
+    ).<span class='ident'>expect</span>(<span class='string'>&quot;This does not happen&quot;</span>);
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>ids</span> <span class='op'>=</span> <span class='ident'>graph</span>.<span class='ident'>list_ids</span>();
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>ids</span>.<span class='ident'>next</span>(), <span class='prelude-val'>Some</span>(<span class='number'>0</span>));
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>ids</span>.<span class='ident'>next</span>(), <span class='prelude-val'>Some</span>(<span class='number'>5</span>));
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>ids</span>.<span class='ident'>next</span>(), <span class='prelude-val'>None</span>);</pre>
+</div><h4 id='method.get_edge_mut' class='method'><span id='get_edge_mut.v' class='invisible'><code>fn <a href='#method.get_edge_mut' class='fnname'>get_edge_mut</a>(&amp;'a mut self, from: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>, to: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;'a mut E&gt;</code></span></h4>
+<div class='docblock'><p>Returns a mutable version of the edge between from and to.</p>
+
+<h1 id='examples-5' class='section-header'><a href='#examples-5'>Examples</a></h1>
+<pre class='rust rust-example-rendered'>
+<span class='kw'>use</span> <span class='ident'>graph</span>::<span class='ident'>Graph</span>;
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>graph</span> <span class='op'>=</span> <span class='ident'>Graph</span>::<span class='ident'>new</span>(
+            <span class='macro'>vec</span><span class='macro'>!</span>[(<span class='number'>0</span>, <span class='string'>&quot;A&quot;</span>), (<span class='number'>5</span>, <span class='string'>&quot;B&quot;</span>)],
+            <span class='macro'>vec</span><span class='macro'>!</span>[(<span class='number'>0</span>, <span class='string'>&quot;Edge from A to B&quot;</span>, <span class='number'>5</span>)]
+    ).<span class='ident'>expect</span>(<span class='string'>&quot;This does not happen&quot;</span>);
+
+<span class='kw'>match</span> <span class='ident'>graph</span>.<span class='ident'>get_edge_mut</span>(<span class='number'>0</span>, <span class='number'>5</span>) {
+    <span class='prelude-val'>Some</span>(<span class='ident'>t</span>) <span class='op'>=&gt;</span> <span class='kw-2'>*</span><span class='ident'>t</span> <span class='op'>=</span> <span class='string'>&quot;Hello&quot;</span>,
+    <span class='prelude-val'>None</span> <span class='op'>=&gt;</span> <span class='macro'>panic</span><span class='macro'>!</span>(<span class='string'>&quot;This does not happen!&quot;</span>),
+}
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>edges</span> <span class='op'>=</span> <span class='ident'>graph</span>.<span class='ident'>get_edges</span>(<span class='number'>0</span>).<span class='ident'>expect</span>(<span class='string'>&quot;This does not happen&quot;</span>);
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>edges</span>.<span class='ident'>next</span>(), <span class='prelude-val'>Some</span>(<span class='kw-2'>&amp;</span><span class='string'>&quot;Hello&quot;</span>));
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='ident'>edges</span>.<span class='ident'>next</span>(), <span class='prelude-val'>None</span>);</pre>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;V:&nbsp;<a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a>, E:&nbsp;<a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a>&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../graph/struct.Graph.html' title='graph::Graph'>Graph</a>&lt;V, E&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/graph/graph/graph.rs.html#23' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'a, V:&nbsp;'a, E:&nbsp;'a&gt; <a class='trait' href='../graph/trait.GraphTrait.html' title='graph::GraphTrait'>GraphTrait</a> for <a class='struct' href='../graph/struct.Graph.html' title='graph::Graph'>Graph</a>&lt;V, E&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/graph/graph/graph.rs.html#160-172' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.V' class='type'><span id='V.t' class='invisible'><code>type <a href='../graph/trait.GraphTrait.html#associatedtype.V' class='type'>V</a> = V</code></span></h4>
+<div class='docblock'><p>Node type</p>
+</div><h4 id='associatedtype.E' class='type'><span id='E.t' class='invisible'><code>type <a href='../graph/trait.GraphTrait.html#associatedtype.E' class='type'>E</a> = E</code></span></h4>
+<div class='docblock'><p>Edge type</p>
+</div><h4 id='method.get' class='method'><span id='get.v' class='invisible'><code>fn <a href='../graph/trait.GraphTrait.html#tymethod.get' class='fnname'>get</a>(&amp;self, index: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;V&gt;</code></span></h4>
+<div class='docblock'><p>Retrieve a single node given the index. <a href="../graph/trait.GraphTrait.html#tymethod.get">Read more</a></p>
+</div><h4 id='method.get_conn_idval' class='method'><span id='get_conn_idval.v' class='invisible'><code>fn <a href='../graph/trait.GraphTrait.html#tymethod.get_conn_idval' class='fnname'>get_conn_idval</a>&lt;'b&gt;(&amp;'b self, index: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../graph/iter/struct.ConnIdVal.html' title='graph::iter::ConnIdVal'>ConnIdVal</a>&lt;'b, E&gt;&gt;</code></span></h4>
+<div class='docblock'><p>Retrieve all connections to a node <a href="../graph/trait.GraphTrait.html#tymethod.get_conn_idval">Read more</a></p>
+</div><h4 id='method.gen_limited_dijkstra_vec' class='method'><span id='gen_limited_dijkstra_vec.v' class='invisible'><code>fn <a href='../graph/trait.GraphTrait.html#method.gen_limited_dijkstra_vec' class='fnname'>gen_limited_dijkstra_vec</a>&lt;'a, O, MF, FF&gt;(&amp;'a self,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; start_nodes: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; map_fn: MF,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; filter_fn: FF)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&gt; <a class='struct' href='../graph/dijkstra/struct.DijkstraGenerator.html' title='graph::dijkstra::DijkstraGenerator'>DijkstraGenerator</a>&lt;'a, Self::<a class='trait' href='../graph/trait.GraphTrait.html' title='graph::GraphTrait'>V</a>, Self::<a class='trait' href='../graph/trait.GraphTrait.html' title='graph::GraphTrait'>E</a>, O, MF, FF, Self&gt; <span class='where fmt-newline'>where O: <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.Ord.html' title='core::cmp::Ord'>Ord</a> + <a class='trait' href='../num_traits/identities/trait.Zero.html' title='num_traits::identities::Zero'>Zero</a>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;'p O: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Add.html' title='core::ops::Add'>Add</a>&lt;&amp;'q O, Output=O&gt;,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MF: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html' title='core::ops::Fn'>Fn</a>(&amp;Self::<a class='trait' href='../graph/trait.GraphTrait.html' title='graph::GraphTrait'>E</a>) -&gt; O,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FF: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html' title='core::ops::Fn'>Fn</a>(<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>, &amp;O) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></span></code></span></h4>
+<div class='docblock'><p>create a new Dijkstra&#39;s iterator. <a href="../graph/trait.GraphTrait.html#method.gen_limited_dijkstra_vec">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "graph";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

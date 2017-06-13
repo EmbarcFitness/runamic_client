@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Km","Distance measure in kilometers"]],"trait":[["ToF64","Can be cast to a f64"]]});

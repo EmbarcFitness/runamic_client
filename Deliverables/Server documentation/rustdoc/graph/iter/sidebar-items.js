@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ConnIdVal","Iterator for a Graph structure (see Graph)."],["IterConnIds","Iterator for a Graph structure (see Graph)."],["IterEdges","Iterator for a Graph structure (see Graph)."],["ListIds","Iterator for a Graph structure (see Graph)."],["Root","Iterator for a root structure."]]});

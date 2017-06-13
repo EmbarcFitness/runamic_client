@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Comp","Comparisor structure."]]});

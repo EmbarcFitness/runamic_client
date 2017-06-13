@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DijkstraGenerator","Iterator for generating all edges and nodes in a graph, in a Dijkstra's fashion."]],"type":[["Visited","Shared linked hashmap for a path."]]});

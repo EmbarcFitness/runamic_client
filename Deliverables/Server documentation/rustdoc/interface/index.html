@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `interface` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, interface">
+
+    <title>interface - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'></p><script>window.sidebarCurrent = {name: 'interface', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>interface</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/interface/lib.rs.html#1-522' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Interface for use in the FFI.</p>
+
+<p>This crate contains most of the necessary functions that are exported to the FFI interface.</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Configuration.html'
+                                  title='interface::Configuration'>Configuration</a></td>
+                           <td class='docblock-short'>
+                                <p>The actual configuration.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.ConnIdVal.html'
+                                  title='interface::ConnIdVal'>ConnIdVal</a></td>
+                           <td class='docblock-short'>
+                                <p>Iterator over all connections from a single node, with ID and Data.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.DijkstraIterator.html'
+                                  title='interface::DijkstraIterator'>DijkstraIterator</a></td>
+                           <td class='docblock-short'>
+                                <p>DijkstraIterator.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.DijkstraNode.html'
+                                  title='interface::DijkstraNode'>DijkstraNode</a></td>
+                           <td class='docblock-short'>
+                                <p>Structure yielded by a Dijkstra&#39;s iterator.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Edge.html'
+                                  title='interface::Edge'>Edge</a></td>
+                           <td class='docblock-short'>
+                                <p>Road struct</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Graph.html'
+                                  title='interface::Graph'>Graph</a></td>
+                           <td class='docblock-short'>
+                                <p>Representation of a graph</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.IdVal.html'
+                                  title='interface::IdVal'>IdVal</a></td>
+                           <td class='docblock-short'>
+                                <p>Representation of an edge and its ID, as yielded by a ConnId iterator.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.IterConnIds.html'
+                                  title='interface::IterConnIds'>IterConnIds</a></td>
+                           <td class='docblock-short'>
+                                <p>Iterator over all connections from a single node, with only ID.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.IterEdges.html'
+                                  title='interface::IterEdges'>IterEdges</a></td>
+                           <td class='docblock-short'>
+                                <p>Iterator over all connections from a single node, with only Data.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.ListIds.html'
+                                  title='interface::ListIds'>ListIds</a></td>
+                           <td class='docblock-short'>
+                                <p>Iterator over all node IDs in the graph.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Modifier_Dot.html'
+                                  title='interface::Modifier_Dot'>Modifier_Dot</a></td>
+                           <td class='docblock-short'>
+                                <p>Modifier of the configuration.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Modifiers.html'
+                                  title='interface::Modifiers'>Modifiers</a></td>
+                           <td class='docblock-short'>
+                                <p>Modifiers of an edge.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Node.html'
+                                  title='interface::Node'>Node</a></td>
+                           <td class='docblock-short'>
+                                <p>Representation of a node.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Poison.html'
+                                  title='interface::Poison'>Poison</a></td>
+                           <td class='docblock-short'>
+                                <p>Representation of a poisoned graph</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='struct' href='struct.Root.html'
+                                  title='interface::Root'>Root</a></td>
+                           <td class='docblock-short'>
+                                <p>Iterator over a path generated by Dijkstra&#39;s algorithm.</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_conn_idval_delete.html'
+                                  title='interface::graph_conn_idval_delete'>graph_conn_idval_delete</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Delete the iterator</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_conn_idval_new.html'
+                                  title='interface::graph_conn_idval_new'>graph_conn_idval_new</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Retrieve an iterator over all edges and connected ids.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_conn_idval_next.html'
+                                  title='interface::graph_conn_idval_next'>graph_conn_idval_next</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Advance the iterator</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_connids_delete.html'
+                                  title='interface::graph_connids_delete'>graph_connids_delete</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Delete the iterator</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_connids_new.html'
+                                  title='interface::graph_connids_new'>graph_connids_new</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Retrieve an iterator over all connection ids</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_connids_next.html'
+                                  title='interface::graph_connids_next'>graph_connids_next</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Advance the iterator</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_contains.html'
+                                  title='interface::graph_contains'>graph_contains</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Check if the graph contains a node with the given index</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_delete.html'
+                                  title='interface::graph_delete'>graph_delete</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Delete the graph, freeing its memory.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_dijkstra_choose.html'
+                                  title='interface::graph_dijkstra_choose'>graph_dijkstra_choose</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Pick a random element from the dijkstraiterator that is at a decent distance.
+Rooting keeps working.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_dijkstra_delete.html'
+                                  title='interface::graph_dijkstra_delete'>graph_dijkstra_delete</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Delete the iterator</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_dijkstra_filter.html'
+                                  title='interface::graph_dijkstra_filter'>graph_dijkstra_filter</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Filter the dijkstraiterator, so that it only returns nodes included in the node list.
+Rooting keeps working.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_dijkstra_next.html'
+                                  title='interface::graph_dijkstra_next'>graph_dijkstra_next</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Advance the iterator</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_dijkstra_root.html'
+                                  title='interface::graph_dijkstra_root'>graph_dijkstra_root</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Root the iterator</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_edges_delete.html'
+                                  title='interface::graph_edges_delete'>graph_edges_delete</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Delete the iterator</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_edges_new.html'
+                                  title='interface::graph_edges_new'>graph_edges_new</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Retrieve an iterator over all edges</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_edges_next.html'
+                                  title='interface::graph_edges_next'>graph_edges_next</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Advance the iterator</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_get.html'
+                                  title='interface::graph_get'>graph_get</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Retrieve a node from the graph</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_graph_generate.html'
+                                  title='interface::graph_graph_generate'>graph_graph_generate</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Generate a collection of shortest paths from a starting point</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_listids_delete.html'
+                                  title='interface::graph_listids_delete'>graph_listids_delete</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Delete the iterator</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_listids_new.html'
+                                  title='interface::graph_listids_new'>graph_listids_new</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Retrieve an iterator over all node ids in the graph</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_listids_next.html'
+                                  title='interface::graph_listids_next'>graph_listids_next</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Advance the iterator</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_new.html'
+                                  title='interface::graph_new'>graph_new</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Create a new graph.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_poison.html'
+                                  title='interface::graph_poison'>graph_poison</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Retrieve a new poisoned graph.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_poison_delete.html'
+                                  title='interface::graph_poison_delete'>graph_poison_delete</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Delete the iterator</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_poison_generate.html'
+                                  title='interface::graph_poison_generate'>graph_poison_generate</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Generate a collection of shortest paths from a starting point</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_root_delete.html'
+                                  title='interface::graph_root_delete'>graph_root_delete</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Delete the iterator</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_root_next.html'
+                                  title='interface::graph_root_next'>graph_root_next</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Advance the iterator</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class='fn' href='fn.graph_update_rating.html'
+                                  title='interface::graph_update_rating'>graph_update_rating</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                <p>Update the rating of the road in the graph</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "interface";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
