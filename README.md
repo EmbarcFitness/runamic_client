@@ -14,7 +14,8 @@ As part of the university project, several [deliverables](https://github.com/sim
 # MIT License
 This project is released as an open-source project under the MIT License.
 
-```Copyright (c) 2017 Hendrik Depauw
+```
+Copyright (c) 2017 Hendrik Depauw
 Copyright (c) 2017 Lorenz van Herwaarden
 Copyright (c) 2017 Nick Aelterman
 Copyright (c) 2017 Olivier Cammaert
